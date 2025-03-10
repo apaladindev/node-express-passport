@@ -1,5 +1,5 @@
 # Node Express with Passport
-Server Node app with Express.JS, Passport JWT and  PostgreSQL
+Node Express Server App with Passport Auth using JWT and PostgreSQL
 
 ## Composer Commands
 
