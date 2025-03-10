@@ -1,4 +1,5 @@
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
+const { config } = require('./config/config');
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -10,8 +11,8 @@ const transporter = nodemailer.createTransport({
   // },
   // requireTLS: true,
   auth: {
-    user: 'apaladindev@gmail.com',
-    pass: 'bduc rjof xyua dyir'
+    user: config.smtpAccount,
+    pass: config.smtpPassword
   },
 });
 
@@ -19,8 +20,8 @@ const transporter = nodemailer.createTransport({
 async function sendMail() {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: 'apaladindev@gmail.com', // sender address
-    to: 'apaladines4@gmail.com', // list of receivers
+    from: config.smtpAccount, // sender address
+    to: config.smtpAccount, // list of receivers
     subject: 'New mail test', // Subject line
     text: 'Hello Alee', // plain text body
     html: '<b>Hi dude</b>', // html body
